@@ -1,0 +1,24 @@
+version: "3.8"
+
+
+networks:
+  external:
+    driver: bridge
+
+
+services:
+  db:
+    # 하위 폴더 안에 있는 DockerFile Build
+    build: ./db/.
+    # 외부 접속 허용
+    networks:
+      - external
+    # container 이름 작성
+    container_name: db
+    # postgres 환경 설정
+    environment:
+      - POSTGRES_INITDB_ARGS=--auth-host=scram-sha-256
+      - POSTGRES_HOST_AUTH_METHOD=scram-sha-256
+    ports:
+      - 5432:5432
+
