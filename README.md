@@ -7,29 +7,16 @@
 ```
 주의사항
 - file을 저장 할 때 excel file이 아닌 CSV file형태로 변환한 후 excute를 해야합니다.
+- file을 upload할 때 excute를 두번 해주셔야 정상적으로 db에 데이터가 들어갈 수 있습니다.
+- 같은 파일 이름으로는 중복이 뜰 수가 있습니다.
 
-
-
-# dementia analyze
+# DB 확인 하는법
 ```
-data : data, tablename
-
-db_
--> db : database, table modelling
-
-__init__
--> fastAPI
-```
-
-
-## start
-```commandline
-docekr-compose up -d
-```
-
-## WEB server
-```commandline
-uvicorn server:application --reload
+1. DB.bat을 실행
+2. psql -U postgres 작성 후 실행 [DB접속]
+- all table확인 : \dt
+- 각 table의 값 확인 : select * from (table이름);
+  -> table이름은 업로드한 파일 이름대로 저장이 됩니다.
 ```
 
 ## Python
