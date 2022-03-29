@@ -64,11 +64,15 @@ def reload():
     df = pd.read_csv(f"./app/data/data.csv", encoding='cp949')
     for i, col in enumerate(df.columns):
         df = df.rename(columns={
-            
+            col:
         })
     columns_ = df.columns
 
     return table_name.lower(), df, columns_
+
+
+def get_translate(text):
+    pass
 
 
 def in_data(tn="", df=None, columns=None, index=None):
