@@ -6,3 +6,4 @@ async-generator
 async-exit-stack
 python-multipart
 pandas
+requests
