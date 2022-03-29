@@ -62,6 +62,10 @@ def table_modeling(tn="", df=None, columns=None):
 def reload():
     table_name = next(open("./app/data/filename.txt", "r"))
     df = pd.read_csv(f"./app/data/data.csv", encoding='cp949')
+    for i, col in enumerate(df.columns):
+        df = df.rename(columns={
+            
+        })
     columns_ = df.columns
 
     return table_name.lower(), df, columns_
