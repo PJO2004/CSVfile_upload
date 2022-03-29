@@ -73,10 +73,13 @@ def reload():
 
 def get_translate(text):
     client_id, client_secret = "LnbkGpZ1FltpJ_Jytof0", "2odQqgaDim" # [ADD] Naver API developer ID
-
+    url = "https://openapi.naver.com/v1/papago/n2mt"
     data = {'text': text,
             'source': 'ko',
             'target': 'en'}
+
+    
+
 
 
 def in_data(tn="", df=None, columns=None, index=None):
