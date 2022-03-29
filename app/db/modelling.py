@@ -88,7 +88,10 @@ def get_translate(text):
     trans_data = (send_data['message']['result']['translatedText'])
     # data preprocessing
     trans_data = trans_data.replace(' ', '_')
-
+    trans_data_ = trans_data.split('(')
+    if len(trans_data_) > 0:
+        trans_data = trans_data_[0]
+    return trans_data        
 
 
 def in_data(tn="", df=None, columns=None, index=None):
