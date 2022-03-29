@@ -72,7 +72,11 @@ def reload():
 
 
 def get_translate(text):
-    pass
+    client_id, client_secret = "LnbkGpZ1FltpJ_Jytof0", "2odQqgaDim" # [ADD] Naver API developer ID
+
+    data = {'text': text,
+            'source': 'ko',
+            'target': 'en'}
 
 
 def in_data(tn="", df=None, columns=None, index=None):
