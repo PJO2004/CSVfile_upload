@@ -84,8 +84,11 @@ def get_translate(text):
 
 
     response = requests.post(url, headers=header, data=data)
+    send_data = response.json()
+    trans_data = (send_data['message']['result']['translatedText'])
+    # data preprocessing
+    trans_data = trans_data.replace(' ', '_')
 
-    
 
 
 def in_data(tn="", df=None, columns=None, index=None):
