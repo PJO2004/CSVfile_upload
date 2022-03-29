@@ -64,7 +64,7 @@ def reload():
     df = pd.read_csv(f"./app/data/data.csv", encoding='cp949')
     for i, col in enumerate(df.columns):
         df = df.rename(columns={
-            col:
+            col: get_translate(col)
         })
     columns_ = df.columns
 
@@ -91,7 +91,7 @@ def get_translate(text):
     trans_data_ = trans_data.split('(')
     if len(trans_data_) > 0:
         trans_data = trans_data_[0]
-    return trans_data        
+    return trans_data
 
 
 def in_data(tn="", df=None, columns=None, index=None):
